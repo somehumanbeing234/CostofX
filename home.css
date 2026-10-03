@@ -102,11 +102,11 @@ body{
     align-items: start;
     width: 100vw;
     height: 100vh;
-    position: absolute;
-    right: 0;
-    top:0;
+    height: 100dvh;
+    position: fixed;
+    inset: 0;
     background-color: rgb(255, 255, 255);
-    overflow-y: hidden;
+    overflow-y: auto;
     z-index: 99;
 }
 #mobile-nav a{
@@ -131,6 +131,13 @@ body{
 }
 #mobile-nav button *{
     display: inline;
+}
+body.dark #mobile-nav{
+    background-color: #111827;
+}
+body.dark #mobile-nav button{
+    background-color: #111827;
+    color: white;
 }
 #close{
     position:absolute;
@@ -166,21 +173,61 @@ body{
     color: rgb(51, 51, 51);
     margin-inline-start:1rem;
 }
-#card1{
+#featured-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem 0 1rem;
+    justify-items: center;
+    justify-content: center;
+}
+#card1,
+.featured-card{
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
-    margin-inline-start:1rem;
-    max-width:350px;
-    width:100%;
-    width:fit-content;
-    height:fit-content;
+    max-width: 350px;
+    width: 100%;
+    min-height: 440px;
     background-color: white;
     border: 2px solid rgb(199, 199, 199);
     border-radius: 10px;
     position: relative;
-    transition: border 0.3s ease;
+    transition: border 0.3s ease, transform 0.2s ease;
     cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+.featured-card:hover,
+#card1:hover{
+    border-color: red;
+    transform: translateY(-2px);
+}
+.blank-card {
+    min-height: 320px;
+    overflow: hidden;
+    background: rgba(245, 244, 244, 0.8);
+    border: 2px dashed rgb(199, 199, 199);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.blank-card::after {
+    content: "Coming Soon";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(75, 75, 75);
+    font-size: 24px;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.15);
+}
+.blank-card .featured-cover,
+.blank-card .card-coming-soon {
+    display: none;
 }
 .card-coming-soon{
     position: absolute;
@@ -198,8 +245,8 @@ body{
     pointer-events: none;
     padding-bottom: 136px;
 }
-#card1-cover{
-    background-image:url("/cost of x/imgs/chad-nathan-4jM7ZB9dJ2A-unsplash.jpg");
+#card1-cover,
+.featured-cover{
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y:center;
@@ -209,12 +256,23 @@ body{
     border-top-right-radius: 10px;
     transition: background-size 0.5s ease; 
 }
-#card1 h4{
+#card1-cover{
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("imgs/chad-nathan-4jM7ZB9dJ2A-unsplash.jpg");
+}
+#card2-cover{
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("imgs/chad-nathan-4jM7ZB9dJ2A-unsplash.jpg");
+}
+#card3-cover{
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url("imgs/chad-nathan-4jM7ZB9dJ2A-unsplash.jpg");
+}
+#card1 h4,
+.featured-card h4{
     margin-top: 1rem;
     margin-inline-start: 1rem;
     font-weight:700;
 }
-#card-1-desc{
+#card-1-desc,
+.card-desc{
     margin-top: 0.5rem;
     margin-inline-start:1rem;
     font-size:14px;
@@ -222,7 +280,8 @@ body{
     color: oklch(44.6% 0.03 256.802);
     max-width: 40ch;
 }
-#card1-cntr{
+#card1-cntr,
+.card-stat-box{
     background-color: oklch(92.797% 0.00011 271.152);
     width: 90%;
     display: flex;
@@ -236,7 +295,8 @@ body{
     margin-bottom:1rem;
     margin-top:1.5rem;
 }
-#topArt{
+#topArt,
+.card-top-tag{
     position: absolute;
     background-color: rgba(255, 255, 255,0.8);
     padding-left:0.5rem;
@@ -252,10 +312,12 @@ body{
 }
 #daily,
 #yearly,
-#overyrs{
+#overyrs,
+.stat-label{
     font-size: 12px;
 }
-#card1read{
+#card1read,
+.card-read{
     margin-inline-start:1.1rem;
     margin-bottom: 1rem;
     margin-top:0.5rem;
@@ -263,15 +325,45 @@ body{
     font-size: 14px;
     font-weight: 600;
 }
-#rarr{
+#rarr,
+.card-read i{
     margin-inline-start:0.25rem;
     transition: margin-inline-start 0.5s ease; 
 }
 #yearlytxt,
 #dailytxt,
-#yrstxt{
+#yrstxt,
+.stat-value{
     color:red;
     font-weight: 600;
+}
+body.dark .featured-card,
+body.dark #card1 {
+    background-color: oklch(27.8% 0.033 256.848);
+    border-color: rgb(75, 85, 99);
+}
+body.dark .card-desc,
+body.dark #card-1-desc {
+    color: white;
+}
+body.dark .card-stat-box,
+body.dark #card1-cntr {
+    background-color: oklch(37.3% 0.034 259.733);
+}
+body.dark .stat-value,
+body.dark #yearlytxt,
+body.dark #dailytxt,
+body.dark #yrstxt {
+    color: oklch(70.4% 0.191 22.216);
+}
+body.dark .card-read,
+body.dark #card1read {
+    color: oklch(70.4% 0.191 22.216);
+}
+body.dark .card-top-tag,
+body.dark #topArt {
+    background-color: rgba(17, 24, 39, 0.7);
+    color: white;
 }
 #footer{
     margin-top: 3rem;
@@ -425,7 +517,8 @@ body.dark #loader-text {
         display: block;
         margin-inline-end:3vw;
     }
-    #card1{
+    #card1,
+    .featured-card{
         margin-inline-start:0rem;
         align-self: center;
     }
@@ -433,6 +526,9 @@ body.dark #loader-text {
         width: 100vw;
         display: flex;
         flex-direction: column;
+    }
+    #featured-grid{
+        padding: 0 0.5rem;
     }
     #featured-txt{
         font-size:25px;
