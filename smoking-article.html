@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Real Cost of Smoking</title>
+  <meta name="description" content="Explore an illustrative cigarette-spending estimate and CDC-sourced U.S. health impacts, with assumptions and sources clearly stated." />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Cost of X" />
+  <meta property="og:title" content="The Real Cost of Smoking | Cost of X" />
+  <meta property="og:description" content="Explore an illustrative cigarette-spending estimate and CDC-sourced U.S. health impacts, with assumptions and sources clearly stated." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="The Real Cost of Smoking | Cost of X" />
+  <meta name="twitter:description" content="Explore an illustrative cigarette-spending estimate and CDC-sourced U.S. health impacts, with assumptions and sources clearly stated." />
   <link rel="stylesheet" href="home.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -154,6 +162,16 @@
       font-size: 1rem;
       color: #2d3644;
       font-weight: 400;
+      text-align: center;
+    }
+
+    .stat-note {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.3;
+      font-weight: 400;
     }
 
     .panel {
@@ -231,7 +249,7 @@
 
     .chart-grid {
       position: absolute;
-      inset: 22px 18px 34px 60px;
+      inset: 22px 18px 34px 68px;
       display: grid;
       grid-template-rows: repeat(4, 1fr);
       grid-template-columns: repeat(7, 1fr);
@@ -250,7 +268,7 @@
 
     .chart-bars {
       position: absolute;
-      inset: 22px 18px 34px 60px;
+      inset: 22px 18px 34px 68px;
       display: flex;
       align-items: end;
       justify-content: space-between;
@@ -274,21 +292,20 @@
       box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
     }
 
-    .bar[data-height="0"] { height: 0%; }
-    .bar[data-height="1"] { height: 25%; }
-    .bar[data-height="2"] { height: 38%; }
-    .bar[data-height="3"] { height: 52%; }
-    .bar[data-height="4"] { height: 66%; }
-    .bar[data-height="5"] { height: 78%; }
-    .bar[data-height="6"] { height: 90%; }
-    .bar[data-height="7"] { height: 100%; }
+    .bar[data-height="1"] { height: 13.14%; }
+    .bar[data-height="2"] { height: 26.28%; }
+    .bar[data-height="3"] { height: 39.42%; }
+    .bar[data-height="4"] { height: 52.56%; }
+    .bar[data-height="5"] { height: 65.7%; }
+    .bar[data-height="6"] { height: 78.84%; }
+    .bar[data-height="7"] { height: 91.98%; }
 
     .y-axis {
       position: absolute;
       left: 0;
       top: 22px;
       bottom: 34px;
-      width: 52px;
+      width: 60px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -300,7 +317,7 @@
 
     .x-axis {
       position: absolute;
-      left: 60px;
+      left: 68px;
       right: 18px;
       bottom: 12px;
       display: grid;
@@ -332,6 +349,12 @@
       border-color: rgba(17,24,39,0.08);
       height: 180px;
       border-radius: 18px;
+      text-align: center;
+    }
+
+    .pink-panel .stat-label {
+      max-width: 100%;
+      text-align: center;
     }
 
     .pink-panel .stat-value {
@@ -412,6 +435,34 @@
       letter-spacing: -0.03em;
     }
 
+    .sources {
+      margin-top: 34px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: #4b5563;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .sources h2 {
+      margin: 0 0 8px;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+
+    .sources ul {
+      margin: 0 0 10px;
+      padding-inline-start: 1.25rem;
+    }
+
+    .sources a {
+      color: var(--red-dark);
+    }
+
+    .sources p {
+      margin: 0;
+    }
+
     #share-status {
       min-height: 1.5em;
       margin: 16px 0 0;
@@ -461,11 +512,11 @@
       .stat-card { height: 180px; }
       .chart-shell { height: 220px; }
       .chart-grid,
-      .chart-bars { left: 52px; right: 10px; }
+      .chart-bars { left: 60px; right: 10px; }
       .chart-bars { gap: 4px; }
-      .y-axis { width: 46px; font-size: 0.72rem; }
+      .y-axis { width: 56px; font-size: 0.68rem; }
       .x-axis {
-        left: 52px;
+        left: 60px;
         right: 10px;
         grid-template-columns: repeat(7, minmax(0, 1fr));
         gap: 0;
@@ -505,8 +556,8 @@
     <a href="index.html" class="back-link"><span class="arrow">←</span> Back to Home</a>
 
     <h1>The Real Cost of Smoking</h1>
-    <p class="subtitle">A comprehensive analysis of financial and health impacts</p>
-    <p class="lead"><strong>Smoking is not just a health issue</strong>—it's a significant financial burden that affects millions of people worldwide. Let's break down the numbers.</p>
+    <p class="subtitle">Estimated costs and U.S. health impacts</p>
+    <p class="lead"><strong>Smoking affects health and finances.</strong> The spending example below assumes one $9 pack per day; health figures are U.S. estimates.</p>
 
     <div class="stat-grid">
       <div class="stat-card">
@@ -517,7 +568,7 @@
       <div class="stat-card">
         <div class="stat-icon wallet"><i class="fa-solid fa-wallet"></i></div>
         <div class="stat-value">$270</div>
-        <div class="stat-label">Monthly Cost</div>
+        <div class="stat-label">30-Day Cost</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon red"><i class="fa-solid fa-dollar-sign"></i></div>
@@ -536,17 +587,17 @@
         <div class="panel-icon"><i class="fa-solid fa-wallet"></i></div>
         <h2>Financial Impact</h2>
       </div>
-      <p class="panel-copy">The average smoker spends thousands of dollars annually on cigarettes alone.</p>
+      <p class="panel-copy">At $9 per day, cigarette purchases total $3,285 over 365 days. This example keeps the daily price constant.</p>
 
-      <h3 class="subheading">Yearly Spending</h3>
-      <p class="mini-copy">See how costs accumulate over time</p>
+      <h3 class="subheading">Cumulative Spending</h3>
+      <p class="mini-copy">Projection at $9 per day, excluding future price changes</p>
 
       <div class="chart-shell">
         <div class="y-axis">
-          <span>$3400</span>
-          <span>$2550</span>
-          <span>$1700</span>
-          <span>$850</span>
+          <span>$25,000</span>
+          <span>$18,750</span>
+          <span>$12,500</span>
+          <span>$6,250</span>
           <span>$0</span>
         </div>
 
@@ -558,23 +609,23 @@
         </div>
 
         <div class="chart-bars">
-          <div class="bar-wrap"><div class="bar" data-height="1" style="height: 25%;"></div></div>
-          <div class="bar-wrap"><div class="bar" data-height="2" style="height: 38%;"></div></div>
-          <div class="bar-wrap"><div class="bar" data-height="3" style="height: 52%;"></div></div>
-          <div class="bar-wrap"><div class="bar" data-height="4" style="height: 66%;"></div></div>
-          <div class="bar-wrap"><div class="bar" data-height="5" style="height: 78%;"></div></div>
-          <div class="bar-wrap"><div class="bar" data-height="6" style="height: 90%;"></div></div>
-          <div class="bar-wrap"><div class="bar" data-height="7" style="height: 100%;"></div></div>
+          <div class="bar-wrap"><div class="bar" data-height="1"></div></div>
+          <div class="bar-wrap"><div class="bar" data-height="2"></div></div>
+          <div class="bar-wrap"><div class="bar" data-height="3"></div></div>
+          <div class="bar-wrap"><div class="bar" data-height="4"></div></div>
+          <div class="bar-wrap"><div class="bar" data-height="5"></div></div>
+          <div class="bar-wrap"><div class="bar" data-height="6"></div></div>
+          <div class="bar-wrap"><div class="bar" data-height="7"></div></div>
         </div>
 
         <div class="x-axis">
-          <span>2020</span>
-          <span>2021</span>
-          <span>2022</span>
-          <span>2023</span>
-          <span>2024</span>
-          <span>2025</span>
-          <span>2026</span>
+          <span>1 yr</span>
+          <span>2 yr</span>
+          <span>3 yr</span>
+          <span>4 yr</span>
+          <span>5 yr</span>
+          <span>6 yr</span>
+          <span>7 yr</span>
         </div>
       </div>
     </section>
@@ -584,20 +635,20 @@
         <div class="panel-icon"><i class="fa-solid fa-heart"></i></div>
         <h2>Health Costs</h2>
       </div>
-      <p class="panel-copy">Beyond the price tag, smoking leads to expensive medical treatments and reduced quality of life.</p>
+      <p class="panel-copy">Smoking causes serious diseases, increases healthcare use, and can shorten life. The figures below summarize U.S. estimates.</p>
 
       <div class="stat-grid">
         <div class="stat-card">
-          <div class="stat-value">480,000</div>
-          <div class="stat-label">Annual deaths (US)</div>
+          <div class="stat-value">480,000+</div>
+            <div class="stat-label">Deaths per year (U.S.)<span class="stat-note">(includes secondhand smoke)</span></div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">10</div>
-          <div class="stat-label">Years lost</div>
+          <div class="stat-value">Up to 10</div>
+          <div class="stat-label">Potential years of life gained by quitting</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">$300B</div>
-          <div class="stat-label">Healthcare costs (US)</div>
+          <div class="stat-value">16M+</div>
+          <div class="stat-label">Americans living with a smoking-related disease</div>
         </div>
       </div>
     </section>
@@ -619,6 +670,15 @@
         <button class="share-btn messenger" id="share-messenger" type="button"><i class="fa-brands fa-facebook-messenger"></i> Messenger</button>
       </div>
       <p id="share-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="sources" aria-labelledby="sources-heading">
+      <h2 id="sources-heading">Sources and assumptions</h2>
+      <ul>
+        <li><a href="https://www.cdc.gov/tobacco/about/index.html" target="_blank" rel="noopener noreferrer">CDC: Cigarette Smoking</a> for U.S. smoking-related disease and mortality estimates.</li>
+        <li><a href="https://www.cdc.gov/tobacco/about/benefits-of-quitting.html" target="_blank" rel="noopener noreferrer">CDC: Benefits of Quitting Smoking</a> for the potential life-expectancy gain.</li>
+      </ul>
+      <p>The spending model assumes one $9 pack per day: $270 per 30 days, $3,285 per 365 days, and $98,550 over 30 years. The projection excludes leap days, future price changes, and investment returns; actual prices vary by location.</p>
     </section>
   </main>
 
