@@ -369,6 +369,33 @@ body.dark #topArt {
     background-color: rgba(17, 24, 39, 0.7);
     color: white;
 }
+body.dark #navbar {
+    border-bottom-color: white;
+}
+body.dark #hero-cont,
+body.dark #hero,
+body.dark #footer {
+    background-color: transparent;
+}
+body.dark #hero,
+body.dark #hero h1,
+body.dark #hero h3,
+body.dark #featured-txt,
+body.dark #featured-desc,
+body.dark #footer h1,
+body.dark #footer p {
+    color: white;
+}
+body.dark #articlestxt,
+body.dark #abouttxt {
+    color: white;
+}
+html[lang="ar"] .blank-card::after {
+    content: "قريباً";
+}
+html[lang="ar"] #mobile-nav button {
+    font-family: "Cairo", sans-serif;
+}
 #footer{
     margin-top: 3rem;
     display:flex;

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="debug.js"></script>
-  <title>The Real Cost of Smoking</title>
+  <title data-en="The Real Cost of Smoking" data-ar="التكلفة الحقيقية للتدخين">The Real Cost of Smoking</title>
   <meta name="description" content="Explore an illustrative cigarette-spending estimate and CDC-sourced U.S. health impacts, with assumptions and sources clearly stated." />
   <link rel="canonical" href="https://cost-of-x.pages.dev/smoking-article" />
   <meta property="og:type" content="article" />
@@ -482,6 +482,10 @@
       margin-top: 24px;
     }
 
+    .chart-shell {
+      direction: ltr;
+    }
+
     .share-btn {
       display: inline-flex;
       align-items: center;
@@ -530,6 +534,67 @@
       .share-btn { min-width: 100%; }
       .share-actions { gap: 12px; }
     }
+
+    body.dark {
+      --bg: #111827;
+      --panel: #1f2937;
+      --soft-panel: #312d3a;
+      --card: #1f2937;
+      --muted: #d1d5db;
+      --text: #f9fafb;
+      --dark-text: #e5e7eb;
+      --line: #374151;
+      --shadow: rgba(0, 0, 0, 0.2);
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    body.dark .back-link,
+    body.dark .subtitle,
+    body.dark .lead,
+    body.dark .stat-label,
+    body.dark .panel-copy,
+    body.dark .mini-copy,
+    body.dark .y-axis,
+    body.dark .x-axis,
+    body.dark .share-box .sub,
+    body.dark .sources,
+    body.dark #share-status {
+      color: var(--muted);
+    }
+
+    body.dark .stat-card,
+    body.dark .panel,
+    body.dark .share-box {
+      background: var(--panel);
+      border-color: var(--line);
+    }
+
+    body.dark .pink-panel {
+      background: var(--soft-panel);
+    }
+
+    body.dark .chart-shell {
+      background: #111827;
+      border-color: var(--line);
+    }
+
+    body.dark .chart-grid span {
+      border-bottom-color: rgba(255, 255, 255, 0.16);
+    }
+
+    body.dark .stat-icon {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    body.dark .stat-value {
+      color: #ff7777;
+    }
+
+    body.dark .sources a {
+      color: #ff8a8a;
+    }
   </style>
 </head>
 <body>
@@ -557,44 +622,44 @@
   </div>
 
   <main class="page">
-    <a href="index.html" class="back-link"><span class="arrow">←</span> Back to Home</a>
+    <a href="index.html" class="back-link"><span class="arrow">←</span> <span data-en="Back to Home" data-ar="العودة إلى الرئيسية">Back to Home</span></a>
 
-    <h1>The Real Cost of Smoking</h1>
-    <p class="subtitle">Estimated costs and U.S. health impacts</p>
-    <p class="lead"><strong>Smoking affects health and finances.</strong> The spending example below assumes one $9 pack per day; health figures are U.S. estimates.</p>
+    <h1 data-en="The Real Cost of Smoking" data-ar="التكلفة الحقيقية للتدخين">The Real Cost of Smoking</h1>
+    <p class="subtitle" data-en="Estimated costs and U.S. health impacts" data-ar="التكاليف التقديرية والآثار الصحية في الولايات المتحدة">Estimated costs and U.S. health impacts</p>
+    <p class="lead"><strong data-en="Smoking affects health and finances." data-ar="يؤثر التدخين في الصحة والمال.">Smoking affects health and finances.</strong> <span data-en="The spending example below assumes one $9 pack per day; health figures are U.S. estimates." data-ar="يفترض مثال الإنفاق أدناه شراء علبة واحدة يومياً بسعر 9 دولارات؛ والأرقام الصحية تقديرات أمريكية.">The spending example below assumes one $9 pack per day; health figures are U.S. estimates.</span></p>
 
     <div class="stat-grid">
       <div class="stat-card">
         <div class="stat-icon red"><i class="fa-solid fa-smoking"></i></div>
         <div class="stat-value">$9</div>
-        <div class="stat-label">Daily Cost</div>
+        <div class="stat-label" data-en="Daily Cost" data-ar="التكلفة اليومية">Daily Cost</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon wallet"><i class="fa-solid fa-wallet"></i></div>
         <div class="stat-value">$270</div>
-        <div class="stat-label">30-Day Cost</div>
+        <div class="stat-label" data-en="30-Day Cost" data-ar="تكلفة 30 يوماً">30-Day Cost</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon red"><i class="fa-solid fa-dollar-sign"></i></div>
         <div class="stat-value">$3,285</div>
-        <div class="stat-label">Yearly Cost</div>
+        <div class="stat-label" data-en="Yearly Cost" data-ar="التكلفة السنوية">Yearly Cost</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon red"><i class="fa-solid fa-arrow-trend-up"></i></div>
         <div class="stat-value">$98,550</div>
-        <div class="stat-label">30-Year Cost</div>
+        <div class="stat-label" data-en="30-Year Cost" data-ar="تكلفة 30 سنة">30-Year Cost</div>
       </div>
     </div>
 
     <section class="panel">
       <div class="panel-header">
         <div class="panel-icon"><i class="fa-solid fa-wallet"></i></div>
-        <h2>Financial Impact</h2>
+        <h2 data-en="Financial Impact" data-ar="الأثر المالي">Financial Impact</h2>
       </div>
-      <p class="panel-copy">At $9 per day, cigarette purchases total $3,285 over 365 days. This example keeps the daily price constant.</p>
+      <p class="panel-copy" data-en="At $9 per day, cigarette purchases total $3,285 over 365 days. This example keeps the daily price constant." data-ar="بسعر 9 دولارات يومياً، يبلغ إجمالي شراء السجائر 3,285 دولاراً خلال 365 يوماً. يفترض هذا المثال ثبات السعر اليومي.">At $9 per day, cigarette purchases total $3,285 over 365 days. This example keeps the daily price constant.</p>
 
-      <h3 class="subheading">Cumulative Spending</h3>
-      <p class="mini-copy">Projection at $9 per day, excluding future price changes</p>
+      <h3 class="subheading" data-en="Cumulative Spending" data-ar="الإنفاق التراكمي">Cumulative Spending</h3>
+      <p class="mini-copy" data-en="Projection at $9 per day, excluding future price changes" data-ar="تقدير الإنفاق بسعر 9 دولارات يومياً، دون احتساب تغيّر الأسعار مستقبلاً">Projection at $9 per day, excluding future price changes</p>
 
       <div class="chart-shell">
         <div class="y-axis">
@@ -623,13 +688,13 @@
         </div>
 
         <div class="x-axis">
-          <span>1 yr</span>
-          <span>2 yr</span>
-          <span>3 yr</span>
-          <span>4 yr</span>
-          <span>5 yr</span>
-          <span>6 yr</span>
-          <span>7 yr</span>
+          <span data-en="1 yr" data-ar="سنة 1">1 yr</span>
+          <span data-en="2 yr" data-ar="سنتان">2 yr</span>
+          <span data-en="3 yr" data-ar="3 سنوات">3 yr</span>
+          <span data-en="4 yr" data-ar="4 سنوات">4 yr</span>
+          <span data-en="5 yr" data-ar="5 سنوات">5 yr</span>
+          <span data-en="6 yr" data-ar="6 سنوات">6 yr</span>
+          <span data-en="7 yr" data-ar="7 سنوات">7 yr</span>
         </div>
       </div>
     </section>
@@ -637,52 +702,52 @@
     <section class="panel pink-panel">
       <div class="panel-header">
         <div class="panel-icon"><i class="fa-solid fa-heart"></i></div>
-        <h2>Health Costs</h2>
+        <h2 data-en="Health Costs" data-ar="التكاليف الصحية">Health Costs</h2>
       </div>
-      <p class="panel-copy">Smoking causes serious diseases, increases healthcare use, and can shorten life. The figures below summarize U.S. estimates.</p>
+      <p class="panel-copy" data-en="Smoking causes serious diseases, increases healthcare use, and can shorten life. The figures below summarize U.S. estimates." data-ar="يسبب التدخين أمراضاً خطيرة، ويزيد استخدام الرعاية الصحية، وقد يقصّر العمر. تلخّص الأرقام أدناه تقديرات أمريكية.">Smoking causes serious diseases, increases healthcare use, and can shorten life. The figures below summarize U.S. estimates.</p>
 
       <div class="stat-grid">
         <div class="stat-card">
           <div class="stat-value">480,000+</div>
-            <div class="stat-label">Deaths per year (U.S.)<span class="stat-note">(includes secondhand smoke)</span></div>
+            <div class="stat-label"><span data-en="Deaths per year (U.S.)" data-ar="وفيات سنوياً (في الولايات المتحدة)">Deaths per year (U.S.)</span><span class="stat-note" data-en="(includes secondhand smoke)" data-ar="(يشمل التدخين السلبي)">(includes secondhand smoke)</span></div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">Up to 10</div>
-          <div class="stat-label">Potential years of life gained by quitting</div>
+          <div class="stat-value" data-en="Up to 10" data-ar="حتى 10">Up to 10</div>
+          <div class="stat-label" data-en="Potential years of life gained by quitting" data-ar="سنوات العمر المحتملة التي يمكن اكتسابها عند الإقلاع">Potential years of life gained by quitting</div>
         </div>
         <div class="stat-card">
           <div class="stat-value">16M+</div>
-          <div class="stat-label">Americans living with a smoking-related disease</div>
+          <div class="stat-label" data-en="Americans living with a smoking-related disease" data-ar="أمريكيون يعيشون مع مرض مرتبط بالتدخين">Americans living with a smoking-related disease</div>
         </div>
       </div>
     </section>
 
     <section class="cta-panel">
       <div class="warning">!</div>
-      <h3>Make an Informed Decision</h3>
-      <p>Understanding the true cost is the first step toward making better choices for your health and finances.</p>
+      <h3 data-en="Make an Informed Decision" data-ar="اتخذ قراراً واعياً">Make an Informed Decision</h3>
+      <p data-en="Understanding the true cost is the first step toward making better choices for your health and finances." data-ar="إن فهم التكلفة الحقيقية هو الخطوة الأولى لاتخاذ خيارات أفضل لصحتك وأموالك.">Understanding the true cost is the first step toward making better choices for your health and finances.</p>
     </section>
 
     <section class="share-box">
       <div class="share-icon"><i class="fa-solid fa-share-nodes"></i></div>
-      <h4>Share This Article</h4>
-      <div class="sub">Help others make informed decisions</div>
+      <h4 data-en="Share This Article" data-ar="شارك هذا المقال">Share This Article</h4>
+      <div class="sub" data-en="Help others make informed decisions" data-ar="ساعد الآخرين على اتخاذ قرارات واعية">Help others make informed decisions</div>
 
       <div class="share-actions">
-        <button class="share-btn whatsapp" id="share-whatsapp" type="button"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
-        <button class="share-btn telegram" id="share-telegram" type="button"><i class="fa-brands fa-telegram"></i> Telegram</button>
-        <button class="share-btn messenger" id="share-messenger" type="button"><i class="fa-brands fa-facebook-messenger"></i> Messenger</button>
+        <button class="share-btn whatsapp" id="share-whatsapp" type="button"><i class="fa-brands fa-whatsapp"></i> <span data-en="WhatsApp" data-ar="واتساب">WhatsApp</span></button>
+        <button class="share-btn telegram" id="share-telegram" type="button"><i class="fa-brands fa-telegram"></i> <span data-en="Telegram" data-ar="تيليجرام">Telegram</span></button>
+        <button class="share-btn messenger" id="share-messenger" type="button"><i class="fa-brands fa-facebook-messenger"></i> <span data-en="Messenger" data-ar="ماسنجر">Messenger</span></button>
       </div>
       <p id="share-status" role="status" aria-live="polite"></p>
     </section>
 
     <section class="sources" aria-labelledby="sources-heading">
-      <h2 id="sources-heading">Sources and assumptions</h2>
+      <h2 id="sources-heading" data-en="Sources and assumptions" data-ar="المصادر والافتراضات">Sources and assumptions</h2>
       <ul>
-        <li><a href="https://www.cdc.gov/tobacco/about/index.html" target="_blank" rel="noopener noreferrer">CDC: Cigarette Smoking</a> for U.S. smoking-related disease and mortality estimates.</li>
-        <li><a href="https://www.cdc.gov/tobacco/about/benefits-of-quitting.html" target="_blank" rel="noopener noreferrer">CDC: Benefits of Quitting Smoking</a> for the potential life-expectancy gain.</li>
+        <li><a href="https://www.cdc.gov/tobacco/about/index.html" target="_blank" rel="noopener noreferrer" data-en="CDC: Cigarette Smoking" data-ar="مراكز مكافحة الأمراض: تدخين السجائر">CDC: Cigarette Smoking</a> <span data-en="for U.S. smoking-related disease and mortality estimates." data-ar="لمعلومات تقديرات الأمراض والوفيات المرتبطة بالتدخين في الولايات المتحدة.">for U.S. smoking-related disease and mortality estimates.</span></li>
+        <li><a href="https://www.cdc.gov/tobacco/about/benefits-of-quitting.html" target="_blank" rel="noopener noreferrer" data-en="CDC: Benefits of Quitting Smoking" data-ar="مراكز مكافحة الأمراض: فوائد الإقلاع عن التدخين">CDC: Benefits of Quitting Smoking</a> <span data-en="for the potential life-expectancy gain." data-ar="لمعلومات الزيادة المحتملة في متوسط العمر عند الإقلاع.">for the potential life-expectancy gain.</span></li>
       </ul>
-      <p>The spending model assumes one $9 pack per day: $270 per 30 days, $3,285 per 365 days, and $98,550 over 30 years. The projection excludes leap days, future price changes, and investment returns; actual prices vary by location.</p>
+      <p data-en="The spending model assumes one $9 pack per day: $270 per 30 days, $3,285 per 365 days, and $98,550 over 30 years. The projection excludes leap days, future price changes, and investment returns; actual prices vary by location." data-ar="يفترض نموذج الإنفاق علبة واحدة يومياً بسعر 9 دولارات: 270 دولاراً لكل 30 يوماً، و3,285 دولاراً لكل 365 يوماً، و98,550 دولاراً خلال 30 عاماً. لا يشمل التقدير الأيام الكبيسة أو تغيّر الأسعار مستقبلاً أو عوائد الاستثمار؛ وتختلف الأسعار الفعلية حسب الموقع.">The spending model assumes one $9 pack per day: $270 per 30 days, $3,285 per 365 days, and $98,550 over 30 years. The projection excludes leap days, future price changes, and investment returns; actual prices vary by location.</p>
     </section>
   </main>
 
