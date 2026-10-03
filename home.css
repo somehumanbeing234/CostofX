@@ -225,6 +225,10 @@ body.dark #mobile-nav button{
     font-weight: 600;
     background: rgba(255, 255, 255, 0.15);
 }
+body.dark .blank-card::after {
+    color: #f9fafb;
+    background: rgba(17, 24, 39, 0.45);
+}
 .blank-card .featured-cover,
 .blank-card .card-coming-soon {
     display: none;
