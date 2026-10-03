@@ -432,9 +432,9 @@ window.runFullDiagnostics = async function runFullDiagnostics() {
     const rootUrl = window.location.origin === "null"
         ? new URL("index.html", window.location.href)
         : new URL("/index.html", window.location.origin);
+    results.push({ check: "Tailwind CDN", status: "not used by this site; no request sent", latencyMs: null });
     await Promise.all([
         checkFetch("site root /index.html", rootUrl.href, "same-origin"),
-        checkFetch("Tailwind CDN", "https://cdn.tailwindcss.com", "no-cors"),
         checkFetch("Font Awesome kit", "https://kit.fontawesome.com/ce0e489668.js", "no-cors"),
         checkFetch("Google Fonts CSS", "https://fonts.googleapis.com/css2?family=Inter", "no-cors")
     ]);
