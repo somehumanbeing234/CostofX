@@ -168,20 +168,6 @@ if (darkMob) {
     })
 }
 
-if (articles) {
-    articles.addEventListener("mouseenter", () => {
-        articles.style.color = "red"
-    })
-
-    articles.addEventListener("mouseleave", () => {
-        if (document.body.classList.contains("dark")) {
-            articles.style.color = "white"
-        } else {
-            articles.style.color = "rgb(45,45,45)"
-        }
-    })
-}
-
 if (language) {
     language.addEventListener("click", () => {
         applyLanguage(!isArabic)

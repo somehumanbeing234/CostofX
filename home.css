@@ -390,6 +390,10 @@ body.dark #articlestxt,
 body.dark #abouttxt {
     color: white;
 }
+body.dark #articlestxt:hover,
+body.dark #abouttxt:hover {
+    color: red;
+}
 html[lang="ar"] .blank-card::after {
     content: "قريباً";
 }
