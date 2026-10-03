@@ -397,3 +397,53 @@ window.addEventListener("load", () => {
 
 });
 
+window.runFullDiagnostics = async function runFullDiagnostics() {
+    const results = [];
+    const checkFetch = async (label, url, mode) => {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 6000);
+        const started = performance.now();
+        try {
+            const response = await fetch(url, { mode, cache: "no-store", signal: controller.signal });
+            const status = response.type === "opaque" ? "reachable (opaque response)" : `${response.status} ${response.statusText}`.trim();
+            results.push({ check: label, status, latencyMs: Math.round(performance.now() - started) });
+        } catch (error) {
+            results.push({
+                check: label,
+                status: error.name === "AbortError" ? "timed out after 6000ms" : `failed: ${error.message}`,
+                latencyMs: Math.round(performance.now() - started)
+            });
+        } finally {
+            clearTimeout(timeout);
+        }
+    };
+
+    try {
+        const key = `costofx-diagnostic-${Date.now()}`;
+        localStorage.setItem(key, "ok");
+        const passed = localStorage.getItem(key) === "ok";
+        localStorage.removeItem(key);
+        results.push({ check: "localStorage read/write", status: passed ? "passed" : "failed", latencyMs: null });
+    } catch (error) {
+        results.push({ check: "localStorage read/write", status: `failed: ${error.message}`, latencyMs: null });
+    }
+
+    const rootUrl = window.location.origin === "null"
+        ? new URL("index.html", window.location.href)
+        : new URL("/index.html", window.location.origin);
+    await Promise.all([
+        checkFetch("site root /index.html", rootUrl.href, "same-origin"),
+        checkFetch("Tailwind CDN", "https://cdn.tailwindcss.com", "no-cors"),
+        checkFetch("Font Awesome kit", "https://kit.fontawesome.com/ce0e489668.js", "no-cors"),
+        checkFetch("Google Fonts CSS", "https://fonts.googleapis.com/css2?family=Inter", "no-cors")
+    ]);
+
+    console.table(results);
+    const lines = results.map(({ check, status, latencyMs }) =>
+        `${check}: ${status}${latencyMs === null ? "" : ` (${latencyMs}ms)`}`
+    );
+    if (typeof window.__updateDebugDiagnostics === "function") {
+        window.__updateDebugDiagnostics(lines);
+    }
+    return results;
+};
