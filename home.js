@@ -401,6 +401,7 @@ window.runFullDiagnostics = async function runFullDiagnostics() {
     const results = [];
     const checkFetch = async (label, url, mode) => {
         const controller = new AbortController();
+        // Bound each probe so a slow mobile connection cannot stall the full report.
         const timeout = setTimeout(() => controller.abort(), 6000);
         const started = performance.now();
         try {
